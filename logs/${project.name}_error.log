@@ -1,0 +1,9 @@
+[${project.name}][${env:SERVER_PORT}] 2020-04-10 20:02:27,421 ERROR [http-nio-57010-exec-5][QiniuUtils.java:60] - 上传文件到七牛: https://upload-z2.qiniup.com/  
+{ResponseInfo:com.qiniu.http.Response@1fc1555b,status:401, reqId:VTQAAACkYFircwQW, xlog:X-Log, xvia:, adress:upload-z2.qiniup.com/157.255.151.17:443, duration:0.000000 s, error:bad token}  
+{"error":"bad token"}
+[${project.name}][${env:SERVER_PORT}] 2020-04-10 20:07:40,460 ERROR [http-nio-57010-exec-7][QiniuUtils.java:60] - 上传文件到七牛: https://upload-z2.qiniup.com/  
+{ResponseInfo:com.qiniu.http.Response@ca8f87a,status:401, reqId:Bz4AAACqejv0cwQW, xlog:X-Log, xvia:, adress:upload-z2.qiniup.com/221.4.146.219:443, duration:0.000000 s, error:bad token}  
+{"error":"bad token"}
+[${project.name}][${env:SERVER_PORT}] 2020-04-10 20:20:41,194 ERROR [http-nio-57010-exec-8][QiniuUtils.java:60] - 上传文件到七牛: https://upload-z2.qiniup.com/  
+{ResponseInfo:com.qiniu.http.Response@60072e28,status:401, reqId:pEQAAADNCgOqdAQW, xlog:X-Log, xvia:, adress:upload-z2.qiniup.com/157.255.151.20:443, duration:0.000000 s, error:bad token}  
+{"error":"bad token"}

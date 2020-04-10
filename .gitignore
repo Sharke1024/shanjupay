@@ -1,0 +1,5 @@
+# Project exclude paths
+/shanjupay-common/target/
+/shanjupay-merchant/shanjupay-merchant-api/target/
+/shanjupay-merchant/shanjupay-merchant-service/target/
+/shanjupay-merchant-application/target/

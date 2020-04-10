@@ -1,0 +1,1 @@
+[${project.name}][${env:SERVER_PORT}] 2020-04-09 14:52:39,680 INFO [dubbo-client-idleCheck-thread-1][ReconnectTimerTask.java:48] -  [DUBBO] Initial connection to HeaderExchangeClient [channel=org.apache.dubbo.remoting.transport.netty4.NettyClient [192.168.99.1:0 -> /192.168.99.1:20890]], dubbo version: 2.7.3, current host: 192.168.99.1
