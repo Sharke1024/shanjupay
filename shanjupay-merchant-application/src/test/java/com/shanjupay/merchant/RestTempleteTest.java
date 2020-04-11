@@ -17,6 +17,8 @@ import java.util.Map;
  * @Author DL_Wu
  * @Date 2020/4/7 10:13
  * @Version 1.0
+ *
+ * restTemplate 远程获取 短信服务信息
  */
 @SpringBootTest
 @RunWith(SpringRunner.class)

@@ -12,6 +12,7 @@ import com.shanjupay.merchant.entity.Merchant;
 import com.shanjupay.merchant.mapper.MerchantMapper;
 import jdk.nashorn.internal.ir.CallNode;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @Author DL_Wu
@@ -77,4 +78,31 @@ public class MerchantServiceImpl implements MerchantService {
         //向dto中写入新增商户id
         return MerchantConvert.INSTANCE.entity2dto(merchant);
     }
+
+    /**
+     * 资质申请
+     * @param merchantId    商户id
+     * @param merchantDTO   资质申请信息
+     * @throws BusinessException
+     */
+    @Override
+    @Transactional
+    public void applyMerchant(Long merchantId, MerchantDTO merchantDTO) throws BusinessException {
+        if (merchantId == null || merchantDTO == null){
+            throw new BusinessException(CommonErrorCode.E_100108);//传入对象为空
+        }
+        Merchant merchant = merchantMapper.selectById(merchantId);
+        if (merchant == null){
+            throw new BusinessException(CommonErrorCode.E_200002);//商户不存在
+        }
+        Merchant merchant_update = MerchantConvert.INSTANCE.dto2entity(merchantDTO);
+        merchant_update.setAuditStatus("1");  //1-已申请待审核
+        merchant_update.setId(merchant.getId());//拿到商户id
+        merchant_update.setMobile(merchant.getMobile());
+        merchant_update.setTenantId(merchant.getTenantId());// 租户ID,关联统一用户
+        //更新merchant信息
+        merchantMapper.updateById(merchant_update);
+    }
+
+
 }

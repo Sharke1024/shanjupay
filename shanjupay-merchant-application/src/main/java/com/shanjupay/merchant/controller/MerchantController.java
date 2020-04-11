@@ -6,9 +6,13 @@ import com.shanjupay.common.util.PhoneUtil;
 import com.shanjupay.common.util.StringUtil;
 import com.shanjupay.merchant.api.MerchantService;
 import com.shanjupay.merchant.api.dto.MerchantDTO;
+import com.shanjupay.merchant.common.LoginUser;
+import com.shanjupay.merchant.common.SecurityUtil;
+import com.shanjupay.merchant.convert.MerchantDetailConvert;
 import com.shanjupay.merchant.convert.MerchantRegisterConvert;
 import com.shanjupay.merchant.service.FileService;
 import com.shanjupay.merchant.service.SmsService;
+import com.shanjupay.merchant.vo.MerchantDetailVO;
 import com.shanjupay.merchant.vo.MerchantRegisterVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -114,6 +118,15 @@ public class MerchantController {
         String fileName = UUID.randomUUID().toString()+suffix;
         //fileService完成证件上传,返回下载路径
         return fileService.upLoad(bytes, fileName);
+    }
+
+    @ApiOperation("商户资质申请")
+    @PostMapping("/my/merchants/save")
+    @ApiImplicitParam(name = "merchantInfo",value = "商户认证资料",required = true,dataType = "MerchantDetailVO",paramType = "body")
+    public void applyMerchant(@RequestBody MerchantDetailVO merchantDetailVO)throws BusinessException{
+        Long merchantId = SecurityUtil.getMerchantId();
+        MerchantDTO merchantDTO = MerchantDetailConvert.INSTANCE.vo2dto(merchantDetailVO);
+        merchantService.applyMerchant(merchantId,merchantDTO);
     }
 
 }
