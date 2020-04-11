@@ -1,4 +1,4 @@
-[${project.name}][${env:SERVER_PORT}] 2020-04-11 17:15:08,535 ERROR [main][NacosPropertySourceBuilder.java:106] - get data from Nacos error,dataId:spring‐boot‐starter‐druid.yaml, 
+[${project.name}][${env:SERVER_PORT}] 2020-04-11 20:27:01,399 ERROR [main][NacosPropertySourceBuilder.java:106] - get data from Nacos error,dataId:spring‐boot‐starter‐druid.yaml, 
 ErrCode:-400, ErrMsg:dataId invalid
 	at com.alibaba.nacos.client.config.utils.ParamUtils.checkKeyParam(ParamUtils.java:64)
 	at com.alibaba.nacos.client.config.NacosConfigService.getConfigInner(NacosConfigService.java:154)
@@ -15,7 +15,7 @@ ErrCode:-400, ErrMsg:dataId invalid
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
 	at com.shanjupay.merchant.MerchantBootstrap.main(MerchantBootstrap.java:15)
-[${project.name}][${env:SERVER_PORT}] 2020-04-11 17:15:08,541 ERROR [main][NacosPropertySourceBuilder.java:106] - get data from Nacos error,dataId:spring‐boot‐mybatis‐plus.yaml, 
+[${project.name}][${env:SERVER_PORT}] 2020-04-11 20:27:01,408 ERROR [main][NacosPropertySourceBuilder.java:106] - get data from Nacos error,dataId:spring‐boot‐mybatis‐plus.yaml, 
 ErrCode:-400, ErrMsg:dataId invalid
 	at com.alibaba.nacos.client.config.utils.ParamUtils.checkKeyParam(ParamUtils.java:64)
 	at com.alibaba.nacos.client.config.NacosConfigService.getConfigInner(NacosConfigService.java:154)
@@ -32,4 +32,3 @@ ErrCode:-400, ErrMsg:dataId invalid
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
 	at com.shanjupay.merchant.MerchantBootstrap.main(MerchantBootstrap.java:15)
-[${project.name}][${env:SERVER_PORT}] 2020-04-11 17:16:08,684 ERROR [http-nio-57010-exec-2][GlobalExceptionHandler.java:55] - 系统异常

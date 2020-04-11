@@ -19,6 +19,7 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -47,6 +48,8 @@ public class MerchantController {
     //文件服务接口
     @Autowired
     private FileService fileService;
+
+
 
     @ApiOperation("根据merchant Id查询")
     @GetMapping("/merchants/{id}")
