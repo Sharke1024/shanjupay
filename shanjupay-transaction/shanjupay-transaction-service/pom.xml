@@ -126,6 +126,11 @@
             <artifactId>mapstruct-processor</artifactId>
             <version>${org.mapstruct.version}</version>
         </dependency>
+        <!--Redis启动器-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
 
     </dependencies>
 

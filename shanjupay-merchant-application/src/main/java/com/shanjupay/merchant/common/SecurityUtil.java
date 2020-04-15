@@ -76,7 +76,6 @@ public class SecurityUtil {
 		if (StringUtils.isEmpty(jsonToken) || !jsonToken.startsWith("Bearer ")) {
 			throw new RuntimeException("token is not as expected");
 		}
-
 		jsonToken = jsonToken.substring(7);
 		jsonToken = EncryptUtil.decodeUTF8StringBase64(jsonToken);
 		JSONObject jsonObject = JSON.parseObject(jsonToken);
