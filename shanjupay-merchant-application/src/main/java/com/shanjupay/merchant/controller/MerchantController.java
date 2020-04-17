@@ -6,6 +6,7 @@ import com.shanjupay.common.util.PhoneUtil;
 import com.shanjupay.common.util.StringUtil;
 import com.shanjupay.merchant.api.MerchantService;
 import com.shanjupay.merchant.api.dto.MerchantDTO;
+import com.shanjupay.merchant.api.dto.StaffDTO;
 import com.shanjupay.merchant.common.LoginUser;
 import com.shanjupay.merchant.common.SecurityUtil;
 import com.shanjupay.merchant.convert.MerchantDetailConvert;
