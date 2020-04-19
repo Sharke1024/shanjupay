@@ -1,4 +1,4 @@
-package com.shanjupay.merchant.common;
+package com.shanjupay.merchant.common.util;
 
 import lombok.Data;
 
@@ -11,5 +11,6 @@ public class LoginUser {
 	private Map<String, Object> payload = new HashMap<>();
 	private String clientId;
 	private String username;
+	private Long tenantId;
 
 }

@@ -20,6 +20,13 @@ public interface MerchantService {
     public MerchantDTO queryMerchantById(Long id);
 
     /**
+     *根据租户Id查询商户信息
+     * @param tenantId
+     * @return
+     */
+    MerchantDTO queryMerchantByTenantId(Long tenantId);
+
+    /**
      * 注册商户接口，接收账号、密码、手机号、为了可扩展性使用MerchantDTO接收数据
      * @param merchantDTO 商户注册信息
      * @return  注册成功的商户信息

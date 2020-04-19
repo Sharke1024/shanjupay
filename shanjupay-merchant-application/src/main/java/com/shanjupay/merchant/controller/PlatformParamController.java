@@ -3,7 +3,7 @@ package com.shanjupay.merchant.controller;
 import com.shanjupay.common.domain.BusinessException;
 import com.shanjupay.common.domain.CommonErrorCode;
 import com.shanjupay.common.util.StringUtil;
-import com.shanjupay.merchant.common.SecurityUtil;
+import com.shanjupay.merchant.common.util.SecurityUtil;
 import com.shanjupay.transaction.api.PayChannelService;
 import com.shanjupay.transaction.api.dto.PayChannelDTO;
 import com.shanjupay.transaction.api.dto.PayChannelParamDTO;

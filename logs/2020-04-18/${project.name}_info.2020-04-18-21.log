@@ -1,0 +1,251 @@
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:31,727 INFO [dubbo-client-idleCheck-thread-1][ReconnectTimerTask.java:48] -  [DUBBO] Initial connection to HeaderExchangeClient [channel=org.apache.dubbo.remoting.transport.netty4.NettyClient [192.168.99.1:0 -> /192.168.99.1:20881]], dubbo version: 2.7.3, current host: 192.168.99.1
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:31,738 ERROR [dubbo-client-idleCheck-thread-1][ReconnectTimerTask.java:51] -  [DUBBO] Fail to connect to HeaderExchangeClient [channel=org.apache.dubbo.remoting.transport.netty4.NettyClient [192.168.99.1:0 -> /192.168.99.1:20881]], dubbo version: 2.7.3, current host: 192.168.99.1
+org.apache.dubbo.remoting.RemotingException: client(url: dubbo://192.168.99.1:20881/com.alibaba.cloud.dubbo.service.DubboMetadataService?anyhost=true&application=user-service&bind.ip=192.168.99.1&bind.port=20881&check=false&codec=dubbo&deprecated=false&dubbo=2.0.2&dynamic=true&generic=true&group=uaa-service&heartbeat=60000&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&methods=getAllServiceKeys,getServiceRestMetadata,getExportedURLs,getAllExportedURLs&pid=14272&qos.enable=false&qos.port=22230&register=true&register.ip=192.168.99.1&release=2.7.3&remote.application=uaa-service&retries=-1&revision=2.1.0.RELEASE&side=consumer&sticky=false&timeout=3000&timestamp=1587200412525&version=1.0.0) failed to connect to server /192.168.99.1:20881, error message is:No route to host: no further information: /192.168.99.1:20881
+	at org.apache.dubbo.remoting.transport.netty4.NettyClient.doConnect(NettyClient.java:166)
+	at org.apache.dubbo.remoting.transport.AbstractClient.connect(AbstractClient.java:190)
+	at org.apache.dubbo.remoting.transport.AbstractClient.reconnect(AbstractClient.java:246)
+	at org.apache.dubbo.remoting.exchange.support.header.HeaderExchangeClient.reconnect(HeaderExchangeClient.java:155)
+	at org.apache.dubbo.remoting.exchange.support.header.ReconnectTimerTask.doTask(ReconnectTimerTask.java:49)
+	at org.apache.dubbo.remoting.exchange.support.header.AbstractTimerTask.run(AbstractTimerTask.java:87)
+	at org.apache.dubbo.common.timer.HashedWheelTimer$HashedWheelTimeout.expire(HashedWheelTimer.java:648)
+	at org.apache.dubbo.common.timer.HashedWheelTimer$HashedWheelBucket.expireTimeouts(HashedWheelTimer.java:727)
+	at org.apache.dubbo.common.timer.HashedWheelTimer$Worker.run(HashedWheelTimer.java:449)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: io.netty.channel.AbstractChannel$AnnotatedNoRouteToHostException: No route to host: no further information: /192.168.99.1:20881
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:327)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:340)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:665)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:612)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:529)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:491)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:905)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	... 1 more
+Caused by: java.net.NoRouteToHostException: No route to host: no further information
+	... 11 more
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:31,741 INFO [dubbo-client-idleCheck-thread-1][ReconnectTimerTask.java:48] -  [DUBBO] Initial connection to HeaderExchangeClient [channel=org.apache.dubbo.remoting.transport.netty4.NettyClient [192.168.99.1:0 -> /192.168.99.1:20890]], dubbo version: 2.7.3, current host: 192.168.99.1
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,315 INFO [com.alibaba.nacos.naming.client.listener][DubboServiceDiscoveryAutoConfiguration.java:157] - The event of the service instances[name : transaction-service , size : 0] change is about to be dispatched
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,315 INFO [com.alibaba.nacos.naming.client.listener][AbstractSpringCloudRegistry.java:213] - The Dubbo Service URL[ID : provider://192.168.99.1:20880/com.shanjupay.user.api.AuthorizationService] is being subscribed for service[name : transaction-service]
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,316 WARN [com.alibaba.nacos.naming.client.listener][AbstractSpringCloudRegistry.java:249] - There is no instance from service[name : transaction-service], and then Dubbo Service[key : com.shanjupay.user.api.AuthorizationService] will not be available , please make sure the further impact
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,316 INFO [com.alibaba.nacos.naming.client.listener][AbstractSpringCloudRegistry.java:213] - The Dubbo Service URL[ID : provider://192.168.99.1:20880/com.shanjupay.user.api.MenuService] is being subscribed for service[name : transaction-service]
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,319 WARN [com.alibaba.nacos.naming.client.listener][AbstractSpringCloudRegistry.java:249] - There is no instance from service[name : transaction-service], and then Dubbo Service[key : com.shanjupay.user.api.MenuService] will not be available , please make sure the further impact
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,320 INFO [com.alibaba.nacos.naming.client.listener][AbstractSpringCloudRegistry.java:213] - The Dubbo Service URL[ID : provider://192.168.99.1:20880/com.shanjupay.user.api.ResourceService] is being subscribed for service[name : transaction-service]
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,320 WARN [com.alibaba.nacos.naming.client.listener][AbstractSpringCloudRegistry.java:249] - There is no instance from service[name : transaction-service], and then Dubbo Service[key : com.shanjupay.user.api.ResourceService] will not be available , please make sure the further impact
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,321 INFO [com.alibaba.nacos.naming.client.listener][AbstractSpringCloudRegistry.java:213] - The Dubbo Service URL[ID : provider://192.168.99.1:20880/com.shanjupay.user.api.TenantService] is being subscribed for service[name : transaction-service]
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,321 WARN [com.alibaba.nacos.naming.client.listener][AbstractSpringCloudRegistry.java:249] - There is no instance from service[name : transaction-service], and then Dubbo Service[key : com.shanjupay.user.api.TenantService] will not be available , please make sure the further impact
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,316 ERROR [dubbo-client-idleCheck-thread-1][ReconnectTimerTask.java:51] -  [DUBBO] Fail to connect to HeaderExchangeClient [channel=org.apache.dubbo.remoting.transport.netty4.NettyClient [192.168.99.1:0 -> /192.168.99.1:20890]], dubbo version: 2.7.3, current host: 192.168.99.1
+org.apache.dubbo.remoting.RemotingException: client(url: dubbo://192.168.99.1:20890/com.alibaba.cloud.dubbo.service.DubboMetadataService?anyhost=true&application=user-service&bind.ip=192.168.99.1&bind.port=20890&check=false&codec=dubbo&deprecated=false&dubbo=2.0.2&dynamic=true&generic=true&group=merchant-service&heartbeat=60000&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&methods=getAllServiceKeys,getServiceRestMetadata,getExportedURLs,getAllExportedURLs&pid=14272&qos.enable=false&qos.port=22230&register=true&register.ip=192.168.99.1&release=2.7.3&remote.application=merchant-service&retries=-1&revision=2.1.0.RELEASE&side=consumer&sticky=false&timeout=3000&timestamp=1587200401019&version=1.0.0) failed to connect to server /192.168.99.1:20890, error message is:No route to host: no further information: /192.168.99.1:20890
+	at org.apache.dubbo.remoting.transport.netty4.NettyClient.doConnect(NettyClient.java:166)
+	at org.apache.dubbo.remoting.transport.AbstractClient.connect(AbstractClient.java:190)
+	at org.apache.dubbo.remoting.transport.AbstractClient.reconnect(AbstractClient.java:246)
+	at org.apache.dubbo.remoting.exchange.support.header.HeaderExchangeClient.reconnect(HeaderExchangeClient.java:155)
+	at org.apache.dubbo.remoting.exchange.support.header.ReconnectTimerTask.doTask(ReconnectTimerTask.java:49)
+	at org.apache.dubbo.remoting.exchange.support.header.AbstractTimerTask.run(AbstractTimerTask.java:87)
+	at org.apache.dubbo.common.timer.HashedWheelTimer$HashedWheelTimeout.expire(HashedWheelTimer.java:648)
+	at org.apache.dubbo.common.timer.HashedWheelTimer$HashedWheelBucket.expireTimeouts(HashedWheelTimer.java:727)
+	at org.apache.dubbo.common.timer.HashedWheelTimer$Worker.run(HashedWheelTimer.java:449)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: io.netty.channel.AbstractChannel$AnnotatedNoRouteToHostException: No route to host: no further information: /192.168.99.1:20890
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:327)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:340)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:665)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:612)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:529)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:491)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:905)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	... 1 more
+Caused by: java.net.NoRouteToHostException: No route to host: no further information
+	... 11 more
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,323 INFO [dubbo-client-idleCheck-thread-1][ReconnectTimerTask.java:48] -  [DUBBO] Initial connection to HeaderExchangeClient [channel=org.apache.dubbo.remoting.transport.netty4.NettyClient [192.168.99.1:0 -> /192.168.99.1:20893]], dubbo version: 2.7.3, current host: 192.168.99.1
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,336 INFO [com.alibaba.nacos.naming.client.listener][DubboServiceDiscoveryAutoConfiguration.java:157] - The event of the service instances[name : merchant-service , size : 0] change is about to be dispatched
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,337 INFO [com.alibaba.nacos.naming.client.listener][AbstractSpringCloudRegistry.java:213] - The Dubbo Service URL[ID : provider://192.168.99.1:20880/com.shanjupay.user.api.AuthorizationService] is being subscribed for service[name : merchant-service]
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,337 WARN [com.alibaba.nacos.naming.client.listener][AbstractSpringCloudRegistry.java:249] - There is no instance from service[name : merchant-service], and then Dubbo Service[key : com.shanjupay.user.api.AuthorizationService] will not be available , please make sure the further impact
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,337 INFO [com.alibaba.nacos.naming.client.listener][AbstractSpringCloudRegistry.java:213] - The Dubbo Service URL[ID : provider://192.168.99.1:20880/com.shanjupay.user.api.MenuService] is being subscribed for service[name : merchant-service]
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,337 WARN [com.alibaba.nacos.naming.client.listener][AbstractSpringCloudRegistry.java:249] - There is no instance from service[name : merchant-service], and then Dubbo Service[key : com.shanjupay.user.api.MenuService] will not be available , please make sure the further impact
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,334 ERROR [dubbo-client-idleCheck-thread-1][ReconnectTimerTask.java:51] -  [DUBBO] Fail to connect to HeaderExchangeClient [channel=org.apache.dubbo.remoting.transport.netty4.NettyClient [192.168.99.1:0 -> /192.168.99.1:20893]], dubbo version: 2.7.3, current host: 192.168.99.1
+org.apache.dubbo.remoting.RemotingException: client(url: dubbo://192.168.99.1:20893/com.alibaba.cloud.dubbo.service.DubboMetadataService?anyhost=true&application=user-service&bind.ip=192.168.99.1&bind.port=20893&check=false&codec=dubbo&deprecated=false&dubbo=2.0.2&dynamic=true&generic=true&group=transaction-service&heartbeat=60000&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&methods=getAllServiceKeys,getServiceRestMetadata,getExportedURLs,getAllExportedURLs&pid=14272&qos.enable=false&qos.port=22230&register=true&register.ip=192.168.99.1&release=2.7.3&remote.application=transaction-service&retries=-1&revision=2.1.0.RELEASE&side=consumer&sticky=false&timeout=3000&timestamp=1587200406879&version=1.0.0) failed to connect to server /192.168.99.1:20893, error message is:No route to host: no further information: /192.168.99.1:20893
+	at org.apache.dubbo.remoting.transport.netty4.NettyClient.doConnect(NettyClient.java:166)
+	at org.apache.dubbo.remoting.transport.AbstractClient.connect(AbstractClient.java:190)
+	at org.apache.dubbo.remoting.transport.AbstractClient.reconnect(AbstractClient.java:246)
+	at org.apache.dubbo.remoting.exchange.support.header.HeaderExchangeClient.reconnect(HeaderExchangeClient.java:155)
+	at org.apache.dubbo.remoting.exchange.support.header.ReconnectTimerTask.doTask(ReconnectTimerTask.java:49)
+	at org.apache.dubbo.remoting.exchange.support.header.AbstractTimerTask.run(AbstractTimerTask.java:87)
+	at org.apache.dubbo.common.timer.HashedWheelTimer$HashedWheelTimeout.expire(HashedWheelTimer.java:648)
+	at org.apache.dubbo.common.timer.HashedWheelTimer$HashedWheelBucket.expireTimeouts(HashedWheelTimer.java:727)
+	at org.apache.dubbo.common.timer.HashedWheelTimer$Worker.run(HashedWheelTimer.java:449)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: io.netty.channel.AbstractChannel$AnnotatedNoRouteToHostException: No route to host: no further information: /192.168.99.1:20893
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:327)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:340)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:665)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:612)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:529)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:491)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:905)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	... 1 more
+Caused by: java.net.NoRouteToHostException: No route to host: no further information
+	... 11 more
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,338 INFO [com.alibaba.nacos.naming.client.listener][AbstractSpringCloudRegistry.java:213] - The Dubbo Service URL[ID : provider://192.168.99.1:20880/com.shanjupay.user.api.ResourceService] is being subscribed for service[name : merchant-service]
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,338 WARN [com.alibaba.nacos.naming.client.listener][AbstractSpringCloudRegistry.java:249] - There is no instance from service[name : merchant-service], and then Dubbo Service[key : com.shanjupay.user.api.ResourceService] will not be available , please make sure the further impact
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,340 INFO [com.alibaba.nacos.naming.client.listener][AbstractSpringCloudRegistry.java:213] - The Dubbo Service URL[ID : provider://192.168.99.1:20880/com.shanjupay.user.api.TenantService] is being subscribed for service[name : merchant-service]
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,340 WARN [com.alibaba.nacos.naming.client.listener][AbstractSpringCloudRegistry.java:249] - There is no instance from service[name : merchant-service], and then Dubbo Service[key : com.shanjupay.user.api.TenantService] will not be available , please make sure the further impact
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,340 INFO [com.alibaba.nacos.naming.client.listener][DubboServiceDiscoveryAutoConfiguration.java:157] - The event of the service instances[name : uaa-service , size : 0] change is about to be dispatched
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,341 INFO [com.alibaba.nacos.naming.client.listener][AbstractSpringCloudRegistry.java:213] - The Dubbo Service URL[ID : provider://192.168.99.1:20880/com.shanjupay.user.api.AuthorizationService] is being subscribed for service[name : uaa-service]
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,341 WARN [com.alibaba.nacos.naming.client.listener][AbstractSpringCloudRegistry.java:249] - There is no instance from service[name : uaa-service], and then Dubbo Service[key : com.shanjupay.user.api.AuthorizationService] will not be available , please make sure the further impact
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,341 INFO [com.alibaba.nacos.naming.client.listener][AbstractSpringCloudRegistry.java:213] - The Dubbo Service URL[ID : provider://192.168.99.1:20880/com.shanjupay.user.api.MenuService] is being subscribed for service[name : uaa-service]
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,342 WARN [com.alibaba.nacos.naming.client.listener][AbstractSpringCloudRegistry.java:249] - There is no instance from service[name : uaa-service], and then Dubbo Service[key : com.shanjupay.user.api.MenuService] will not be available , please make sure the further impact
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,342 INFO [com.alibaba.nacos.naming.client.listener][AbstractSpringCloudRegistry.java:213] - The Dubbo Service URL[ID : provider://192.168.99.1:20880/com.shanjupay.user.api.ResourceService] is being subscribed for service[name : uaa-service]
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,342 WARN [com.alibaba.nacos.naming.client.listener][AbstractSpringCloudRegistry.java:249] - There is no instance from service[name : uaa-service], and then Dubbo Service[key : com.shanjupay.user.api.ResourceService] will not be available , please make sure the further impact
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,343 INFO [com.alibaba.nacos.naming.client.listener][AbstractSpringCloudRegistry.java:213] - The Dubbo Service URL[ID : provider://192.168.99.1:20880/com.shanjupay.user.api.TenantService] is being subscribed for service[name : uaa-service]
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,343 WARN [com.alibaba.nacos.naming.client.listener][AbstractSpringCloudRegistry.java:249] - There is no instance from service[name : uaa-service], and then Dubbo Service[key : com.shanjupay.user.api.TenantService] will not be available , please make sure the further impact
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,347 INFO [com.alibaba.nacos.naming.client.listener][DubboServiceDiscoveryAutoConfiguration.java:157] - The event of the service instances[name : merchant-application , size : 0] change is about to be dispatched
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,348 INFO [com.alibaba.nacos.naming.client.listener][AbstractSpringCloudRegistry.java:213] - The Dubbo Service URL[ID : provider://192.168.99.1:20880/com.shanjupay.user.api.AuthorizationService] is being subscribed for service[name : merchant-application]
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,348 INFO [com.alibaba.nacos.naming.client.listener][AbstractSpringCloudRegistry.java:223] - The metadata of Dubbo service[key : com.shanjupay.user.api.AuthorizationService] can't be found when the subscribed service[name : merchant-application], and then try to initialize it
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,348 WARN [com.alibaba.nacos.naming.client.listener][AbstractSpringCloudRegistry.java:234] - The metadata of Dubbo service[key : com.shanjupay.user.api.AuthorizationService] still can't be found, it could effect the further Dubbo service invocation
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,348 INFO [com.alibaba.nacos.naming.client.listener][AbstractSpringCloudRegistry.java:213] - The Dubbo Service URL[ID : provider://192.168.99.1:20880/com.shanjupay.user.api.MenuService] is being subscribed for service[name : merchant-application]
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,348 INFO [com.alibaba.nacos.naming.client.listener][AbstractSpringCloudRegistry.java:223] - The metadata of Dubbo service[key : com.shanjupay.user.api.MenuService] can't be found when the subscribed service[name : merchant-application], and then try to initialize it
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,348 WARN [com.alibaba.nacos.naming.client.listener][AbstractSpringCloudRegistry.java:234] - The metadata of Dubbo service[key : com.shanjupay.user.api.MenuService] still can't be found, it could effect the further Dubbo service invocation
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,348 INFO [com.alibaba.nacos.naming.client.listener][AbstractSpringCloudRegistry.java:213] - The Dubbo Service URL[ID : provider://192.168.99.1:20880/com.shanjupay.user.api.ResourceService] is being subscribed for service[name : merchant-application]
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,348 INFO [com.alibaba.nacos.naming.client.listener][AbstractSpringCloudRegistry.java:223] - The metadata of Dubbo service[key : com.shanjupay.user.api.ResourceService] can't be found when the subscribed service[name : merchant-application], and then try to initialize it
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,348 WARN [com.alibaba.nacos.naming.client.listener][AbstractSpringCloudRegistry.java:234] - The metadata of Dubbo service[key : com.shanjupay.user.api.ResourceService] still can't be found, it could effect the further Dubbo service invocation
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,349 INFO [com.alibaba.nacos.naming.client.listener][AbstractSpringCloudRegistry.java:213] - The Dubbo Service URL[ID : provider://192.168.99.1:20880/com.shanjupay.user.api.TenantService] is being subscribed for service[name : merchant-application]
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,349 INFO [com.alibaba.nacos.naming.client.listener][AbstractSpringCloudRegistry.java:223] - The metadata of Dubbo service[key : com.shanjupay.user.api.TenantService] can't be found when the subscribed service[name : merchant-application], and then try to initialize it
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:32,349 WARN [com.alibaba.nacos.naming.client.listener][AbstractSpringCloudRegistry.java:234] - The metadata of Dubbo service[key : com.shanjupay.user.api.TenantService] still can't be found, it could effect the further Dubbo service invocation
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:33,437 WARN [ThreadPoolTaskScheduler-1][DubboServiceMetadataRepository.java:216] - Current application will subscribe all services(size:6) in registry, a lot of memory and CPU cycles may be used, thus it's strongly recommend you using the externalized property 'dubbo.cloud.subscribed-services' to specify the services
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:40,103 WARN [ThreadPoolTaskScheduler-1][DubboServiceMetadataRepository.java:216] - Current application will subscribe all services(size:6) in registry, a lot of memory and CPU cycles may be used, thus it's strongly recommend you using the externalized property 'dubbo.cloud.subscribed-services' to specify the services
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:40,951 ERROR [com.alibaba.nacos.client.Worker.longPolling.fixed-127.0.0.1_8848-3d9b9b0e-988a-4810-91f2-82036479e489][ServerHttpAgent.java:151] - [NACOS SocketTimeoutException httpPost] currentServerAddr: http://127.0.0.1:8848， err : Read timed out
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:40,951 ERROR [com.alibaba.nacos.client.Worker.longPolling.fixed-127.0.0.1_8848-3d9b9b0e-988a-4810-91f2-82036479e489][ServerHttpAgent.java:169] - no available server, currentServerAddr : http://127.0.0.1:8848
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:40,951 ERROR [com.alibaba.nacos.client.Worker.longPolling.fixed-127.0.0.1_8848-3d9b9b0e-988a-4810-91f2-82036479e489][ClientWorker.java:389] - [fixed-127.0.0.1_8848-3d9b9b0e-988a-4810-91f2-82036479e489] [check-update] get changed dataId exception
+java.net.ConnectException: no available server, currentServerAddr : http://127.0.0.1:8848
+	at com.alibaba.nacos.client.config.http.ServerHttpAgent.httpPost(ServerHttpAgent.java:170)
+	at com.alibaba.nacos.client.config.http.MetricsHttpAgent.httpPost(MetricsHttpAgent.java:64)
+	at com.alibaba.nacos.client.config.impl.ClientWorker.checkUpdateConfigStr(ClientWorker.java:377)
+	at com.alibaba.nacos.client.config.impl.ClientWorker.checkUpdateDataIds(ClientWorker.java:352)
+	at com.alibaba.nacos.client.config.impl.ClientWorker$LongPollingRunnable.run(ClientWorker.java:512)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:40,952 ERROR [com.alibaba.nacos.client.Worker.longPolling.fixed-127.0.0.1_8848-3d9b9b0e-988a-4810-91f2-82036479e489][ClientWorker.java:550] - longPolling error : 
+java.net.ConnectException: no available server, currentServerAddr : http://127.0.0.1:8848
+	at com.alibaba.nacos.client.config.http.ServerHttpAgent.httpPost(ServerHttpAgent.java:170)
+	at com.alibaba.nacos.client.config.http.MetricsHttpAgent.httpPost(MetricsHttpAgent.java:64)
+	at com.alibaba.nacos.client.config.impl.ClientWorker.checkUpdateConfigStr(ClientWorker.java:377)
+	at com.alibaba.nacos.client.config.impl.ClientWorker.checkUpdateDataIds(ClientWorker.java:352)
+	at com.alibaba.nacos.client.config.impl.ClientWorker$LongPollingRunnable.run(ClientWorker.java:512)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:40,953 ERROR [com.alibaba.nacos.client.Worker.longPolling.fixed-127.0.0.1_8848-3d9b9b0e-988a-4810-91f2-82036479e489][ServerHttpAgent.java:151] - [NACOS SocketTimeoutException httpPost] currentServerAddr: http://127.0.0.1:8848， err : Read timed out
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:40,953 ERROR [com.alibaba.nacos.client.Worker.longPolling.fixed-127.0.0.1_8848-3d9b9b0e-988a-4810-91f2-82036479e489][ServerHttpAgent.java:169] - no available server, currentServerAddr : http://127.0.0.1:8848
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:40,954 ERROR [com.alibaba.nacos.client.Worker.longPolling.fixed-127.0.0.1_8848-3d9b9b0e-988a-4810-91f2-82036479e489][ClientWorker.java:389] - [fixed-127.0.0.1_8848-3d9b9b0e-988a-4810-91f2-82036479e489] [check-update] get changed dataId exception
+java.net.ConnectException: no available server, currentServerAddr : http://127.0.0.1:8848
+	at com.alibaba.nacos.client.config.http.ServerHttpAgent.httpPost(ServerHttpAgent.java:170)
+	at com.alibaba.nacos.client.config.http.MetricsHttpAgent.httpPost(MetricsHttpAgent.java:64)
+	at com.alibaba.nacos.client.config.impl.ClientWorker.checkUpdateConfigStr(ClientWorker.java:377)
+	at com.alibaba.nacos.client.config.impl.ClientWorker.checkUpdateDataIds(ClientWorker.java:352)
+	at com.alibaba.nacos.client.config.impl.ClientWorker$LongPollingRunnable.run(ClientWorker.java:512)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:40,954 ERROR [com.alibaba.nacos.client.Worker.longPolling.fixed-127.0.0.1_8848-3d9b9b0e-988a-4810-91f2-82036479e489][ClientWorker.java:550] - longPolling error : 
+java.net.ConnectException: no available server, currentServerAddr : http://127.0.0.1:8848
+	at com.alibaba.nacos.client.config.http.ServerHttpAgent.httpPost(ServerHttpAgent.java:170)
+	at com.alibaba.nacos.client.config.http.MetricsHttpAgent.httpPost(MetricsHttpAgent.java:64)
+	at com.alibaba.nacos.client.config.impl.ClientWorker.checkUpdateConfigStr(ClientWorker.java:377)
+	at com.alibaba.nacos.client.config.impl.ClientWorker.checkUpdateDataIds(ClientWorker.java:352)
+	at com.alibaba.nacos.client.config.impl.ClientWorker$LongPollingRunnable.run(ClientWorker.java:512)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:40,983 ERROR [com.alibaba.nacos.client.Worker.longPolling.fixed-127.0.0.1_8848-3d9b9b0e-988a-4810-91f2-82036479e489][ServerHttpAgent.java:151] - [NACOS SocketTimeoutException httpPost] currentServerAddr: http://127.0.0.1:8848， err : Read timed out
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:40,984 ERROR [com.alibaba.nacos.client.Worker.longPolling.fixed-127.0.0.1_8848-3d9b9b0e-988a-4810-91f2-82036479e489][ServerHttpAgent.java:169] - no available server, currentServerAddr : http://127.0.0.1:8848
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:40,984 ERROR [com.alibaba.nacos.client.Worker.longPolling.fixed-127.0.0.1_8848-3d9b9b0e-988a-4810-91f2-82036479e489][ClientWorker.java:389] - [fixed-127.0.0.1_8848-3d9b9b0e-988a-4810-91f2-82036479e489] [check-update] get changed dataId exception
+java.net.ConnectException: no available server, currentServerAddr : http://127.0.0.1:8848
+	at com.alibaba.nacos.client.config.http.ServerHttpAgent.httpPost(ServerHttpAgent.java:170)
+	at com.alibaba.nacos.client.config.http.MetricsHttpAgent.httpPost(MetricsHttpAgent.java:64)
+	at com.alibaba.nacos.client.config.impl.ClientWorker.checkUpdateConfigStr(ClientWorker.java:377)
+	at com.alibaba.nacos.client.config.impl.ClientWorker.checkUpdateDataIds(ClientWorker.java:352)
+	at com.alibaba.nacos.client.config.impl.ClientWorker$LongPollingRunnable.run(ClientWorker.java:512)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:40,984 ERROR [com.alibaba.nacos.client.Worker.longPolling.fixed-127.0.0.1_8848-3d9b9b0e-988a-4810-91f2-82036479e489][ClientWorker.java:550] - longPolling error : 
+java.net.ConnectException: no available server, currentServerAddr : http://127.0.0.1:8848
+	at com.alibaba.nacos.client.config.http.ServerHttpAgent.httpPost(ServerHttpAgent.java:170)
+	at com.alibaba.nacos.client.config.http.MetricsHttpAgent.httpPost(MetricsHttpAgent.java:64)
+	at com.alibaba.nacos.client.config.impl.ClientWorker.checkUpdateConfigStr(ClientWorker.java:377)
+	at com.alibaba.nacos.client.config.impl.ClientWorker.checkUpdateDataIds(ClientWorker.java:352)
+	at com.alibaba.nacos.client.config.impl.ClientWorker$LongPollingRunnable.run(ClientWorker.java:512)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:41,459 ERROR [com.alibaba.nacos.client.Worker.longPolling.fixed-127.0.0.1_8848-3d9b9b0e-988a-4810-91f2-82036479e489][ServerHttpAgent.java:151] - [NACOS SocketTimeoutException httpPost] currentServerAddr: http://127.0.0.1:8848， err : Read timed out
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:41,460 ERROR [com.alibaba.nacos.client.Worker.longPolling.fixed-127.0.0.1_8848-3d9b9b0e-988a-4810-91f2-82036479e489][ServerHttpAgent.java:169] - no available server, currentServerAddr : http://127.0.0.1:8848
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:41,460 ERROR [com.alibaba.nacos.client.Worker.longPolling.fixed-127.0.0.1_8848-3d9b9b0e-988a-4810-91f2-82036479e489][ClientWorker.java:389] - [fixed-127.0.0.1_8848-3d9b9b0e-988a-4810-91f2-82036479e489] [check-update] get changed dataId exception
+java.net.ConnectException: no available server, currentServerAddr : http://127.0.0.1:8848
+	at com.alibaba.nacos.client.config.http.ServerHttpAgent.httpPost(ServerHttpAgent.java:170)
+	at com.alibaba.nacos.client.config.http.MetricsHttpAgent.httpPost(MetricsHttpAgent.java:64)
+	at com.alibaba.nacos.client.config.impl.ClientWorker.checkUpdateConfigStr(ClientWorker.java:377)
+	at com.alibaba.nacos.client.config.impl.ClientWorker.checkUpdateDataIds(ClientWorker.java:352)
+	at com.alibaba.nacos.client.config.impl.ClientWorker$LongPollingRunnable.run(ClientWorker.java:512)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[${project.name}][${env:SERVER_PORT}] 2020-04-18 23:56:41,460 ERROR [com.alibaba.nacos.client.Worker.longPolling.fixed-127.0.0.1_8848-3d9b9b0e-988a-4810-91f2-82036479e489][ClientWorker.java:550] - longPolling error : 
+java.net.ConnectException: no available server, currentServerAddr : http://127.0.0.1:8848
+	at com.alibaba.nacos.client.config.http.ServerHttpAgent.httpPost(ServerHttpAgent.java:170)
+	at com.alibaba.nacos.client.config.http.MetricsHttpAgent.httpPost(MetricsHttpAgent.java:64)
+	at com.alibaba.nacos.client.config.impl.ClientWorker.checkUpdateConfigStr(ClientWorker.java:377)
+	at com.alibaba.nacos.client.config.impl.ClientWorker.checkUpdateDataIds(ClientWorker.java:352)
+	at com.alibaba.nacos.client.config.impl.ClientWorker$LongPollingRunnable.run(ClientWorker.java:512)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)

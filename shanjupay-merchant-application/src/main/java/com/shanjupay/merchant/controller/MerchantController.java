@@ -6,9 +6,7 @@ import com.shanjupay.common.util.PhoneUtil;
 import com.shanjupay.common.util.StringUtil;
 import com.shanjupay.merchant.api.MerchantService;
 import com.shanjupay.merchant.api.dto.MerchantDTO;
-import com.shanjupay.merchant.api.dto.StaffDTO;
-import com.shanjupay.merchant.common.LoginUser;
-import com.shanjupay.merchant.common.SecurityUtil;
+import com.shanjupay.merchant.common.util.SecurityUtil;
 import com.shanjupay.merchant.convert.MerchantDetailConvert;
 import com.shanjupay.merchant.convert.MerchantRegisterConvert;
 import com.shanjupay.merchant.service.FileService;
@@ -57,6 +55,15 @@ public class MerchantController {
     public MerchantDTO queryMerchantById(@PathVariable("id") Long id){
         MerchantDTO merchantDTO = merchantService.queryMerchantById(id);
         return merchantDTO ;
+    }
+
+    @ApiOperation("获取登录用户的商户信息")
+    @GetMapping(value="/my/merchants")
+    public MerchantDTO getMyMerchantId(){
+        //从token中获取商户Id
+        Long merchantId = SecurityUtil.getMerchantId();
+        MerchantDTO merchantDTO = queryMerchantById(merchantId);
+        return merchantDTO;
     }
 
     @ApiOperation("获取手机验证码")

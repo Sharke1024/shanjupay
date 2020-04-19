@@ -1,0 +1,3 @@
+[${project.name}][${env:SERVER_PORT}] 2020-04-17 19:00:08,273 WARN [NettyServerWorker-4-2][AbstractServer.java:213] -  [DUBBO] All clients has disconnected from 0.0.0.0/0.0.0.0:20890. You can graceful shutdown now., dubbo version: 2.7.3, current host: 192.168.99.1
+[${project.name}][${env:SERVER_PORT}] 2020-04-17 19:00:08,280 WARN [NettyServerWorker-6-3][AbstractServer.java:213] -  [DUBBO] All clients has disconnected from 0.0.0.0/0.0.0.0:20880. You can graceful shutdown now., dubbo version: 2.7.3, current host: 192.168.99.1
+[${project.name}][${env:SERVER_PORT}] 2020-04-17 19:00:08,302 DEBUG [DubboServerHandler-192.168.99.1:20881-th

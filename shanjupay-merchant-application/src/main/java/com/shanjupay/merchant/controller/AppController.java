@@ -4,7 +4,7 @@ import com.shanjupay.common.domain.BusinessException;
 import com.shanjupay.common.domain.CommonErrorCode;
 import com.shanjupay.merchant.api.AppService;
 import com.shanjupay.merchant.api.dto.AppDTO;
-import com.shanjupay.merchant.common.SecurityUtil;
+import com.shanjupay.merchant.common.util.SecurityUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
